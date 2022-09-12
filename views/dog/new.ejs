@@ -1,0 +1,40 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container">
+    <div class="ui huge header">Post Your Dog</div>
+    <div>
+        <form class="ui form" action="/dogs" method="post">
+            <div class="field">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" placeholder="name">
+            </div>
+            <div class="field">
+                <label for="breed">Breed: </label>
+                <input type="text" id="breed" name="breed" placeholder="breed">
+            </div>
+            <div class="field">
+                <label for="image1">Image1: </label>
+                <input type="text" id="image1" name="image1" placeholder="image1">
+            </div>
+            <div class="field">
+                <label for="image2">Image2: </label>
+                <input type="text" id="image2" name="image2" placeholder="image2">
+            </div>
+            <div class="field">
+                <label for="number">PriceToMate: </label>
+                <input type="number" id="number" name="pricetomate" placeholder="pricetomate" min="50.00" step="1.00">
+            </div>
+            <div class="field">
+                <label for="tel">Contact: </label>
+                <input type="tel" id="tel" name="contact" placeholder="contact">
+            </div>
+            <div class="field">
+                <label for="about">About: </label>
+                <textarea type="text" id="about" name="about" placeholder="about"></textarea>
+            </div>
+            <button class="ui blue basic mini button">Post</button>
+        </form>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,17 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container">
+    <div class="ui huge header">Edit Comment</div>
+    <div>
+        <form class="ui form" action="/dogs/<%= dog_id %>/comments/<%= comment._id %>?_method=PUT" method="post">
+            <div class="field">
+                <label for="comment">Text: </label>
+                <input type="text" id="comment" name="comment[text]" placeholder="comment" value="<%= comment.text %>">
+            </div>
+            <button class="ui blue mini basic button">Update</button>
+            <a class="ui green mini basic button" href="/dogs/<%= dog_id %>">Go Back</a>
+        </form>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,82 @@
+body {
+  background-color: #000;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+#landing-header h1 {
+    color: #fff;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 50s linear infinite;
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d0/German_Shepherd_-_DSC_0346_%2810096362833%29.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://cdn.britannica.com/07/234207-050-0037B589/English-bulldog-dog.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://www.petlovers.com.ng/wp-content/uploads/2017/01/rottweiler-4781630_1280-1024x682.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://media.istockphoto.com/photos/closeup-portrait-of-a-beautiful-dog-breed-south-african-boerboel-picture-id650434716?k=20&m=650434716&s=612x612&w=0&h=2IhnUpJpFNIQ4KlVsZuEV1_XCWQT2lg2eR4Z69fXJdM=);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://i.pinimg.com/originals/d0/e3/9d/d0e39d1eceb2851bf7fde8a1754a3fd2.jpg);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}

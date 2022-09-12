@@ -1,0 +1,68 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container">
+    <div class="ui huge centered header">About <%= dog.name %></div>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <div id="img-div" class="ui segment">
+                <div class="image">
+                    <img class="ui rounded image" src="<%= dog.image1 %>" alt="image1" width="300" height="300px">
+                </div>
+                <div class="image">
+                    <img id="img-second" class="ui rounded image" src="<%= dog.image2 %>" alt="image2" width="300" height="300px">
+                </div>
+            </div>
+            <div class="ui segments">
+                <div class="ui segment">
+                    <h3>Name: </h3><%= dog.name %>
+                </div>
+                <div class="ui segment">
+                    <h3>Breed: </h3><%= dog.breed %>
+                </div>
+                <div class="ui segment">
+                    <h3>PriceToMate: </h3>$<%= dog.pricetomate %>
+                </div>
+                <div class="ui segment">
+                    <h3>Contact: </h3>+<%= dog.contact %>
+                </div>
+                <div class="ui segment">
+                    <h3>About: </h3>
+                    <p><%= dog.about %></p>
+                </div>
+            </div>
+            <h3>Posted By: <%= dog.author.username %> </h3>
+            <div class="extra">
+                <% if(currentUser && dog.author.id.equals(currentUser._id)){ %>
+                    <a class="ui blue mini basic button" href="/dogs/<%= dog._id %>/edit">Edit</a>
+                    <form class="delete-form" action="/dogs/<%= dog._id %>?_method=DELETE" method="post">
+                        <button class="ui red mini basic button">Delete</button>
+                    </form>
+                <% } %>
+            </div>
+            <div class="ui segment">
+                <div class="content">
+                    <a class="ui green basic mini right floated button" href="/dogs/<%= dog._id %>/comments/new">Add Comment</a>
+                    <h4>Comment Section</h4>
+                    <% dog.comments.forEach(function(comment){ %>
+                        <div class="meta">
+                            <span><h4> <%= comment.author.username %> </h4></span>
+                        </div>
+                        <div class="description">
+                            <p><%= comment.text %></p>
+                        </div>
+                        <div class="extra">
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                <a class="ui blue mini basic button" href="/dogs/<%= dog._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                                <form class="delete-form" action="/dogs/<%= dog._id %>/comments/<%= comment._id %>?_method=DELETE" method="post">
+                                    <button class="ui red mini basic button">Delete</button>
+                                </form>
+                            <% } %>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

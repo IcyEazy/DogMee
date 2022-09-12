@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(202, 189, 189);
+}
+
+#sec-main{
+    background-color: #fff;
+}
+
+.main .attached{
+    background-color: #e4dcdc;
+}
+
+#img-div{
+    display: flex;
+}
+
+#img-second{
+    margin-left: 30px;
+}
+
+.container.main{
+    margin-top: 7.0em;
+}
+
+.delete-form{
+    display: inline;
+}

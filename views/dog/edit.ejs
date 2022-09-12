@@ -1,0 +1,41 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container">
+    <div class="ui huge header">Edit About <%= dog.name %></div>
+    <div>
+        <form class="ui form" action="/dogs/<%= dog._id %>?_method=PUT" method="post">
+            <div class="field">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="dog[name]" placeholder="name" value="<%= dog.name %>">
+            </div>
+            <div class="field">
+                <label for="breed">Breed: </label>
+                <input type="text" id="breed" name="dog[breed]" placeholder="breed" value="<%= dog.breed %>">
+            </div>
+            <div class="field">
+                <label for="image1">Image1: </label>
+                <input type="text" id="image1" name="dog[image1]" placeholder="image1" value="<%= dog.image1 %>">
+            </div>
+            <div class="field">
+                <label for="image2">Image2: </label>
+                <input type="text" id="image2" name="dog[image2]" placeholder="image2" value="<%= dog.image2 %>">
+            </div>
+            <div class="field">
+                <label for="number">PriceToMate: </label>
+                <input type="number" id="number" name="dog[pricetomate]" placeholder="pricetomate" min="50.00" step="1.00" value="<%= dog.pricetomate %>">
+            </div>
+            <div class="field">
+                <label for="tel">Contact: </label>
+                <input type="tel" id="tel" name="dog[contact]" placeholder="contact" value="<%= dog.contact %>">
+            </div>
+            <div class="field">
+                <label for="about">About: </label>
+                <textarea type="text" id="about" name="dog[about]" placeholder="about"><%= dog.about %></textarea>
+            </div>
+            <button class="ui blue basic mini button">Update</button>
+            <a class="ui teal basic mini button" href="/dogs/<%= dog._id %>">Go Back</a>
+        </form>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>
